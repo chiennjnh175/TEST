@@ -3,45 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Cá Nhân</title>
+    <title>CV - [Họ và Tên của bạn]</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background: #f4f4f9; color: #333; }
-        .container { max-width: 800px; margin: auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h1 { color: #0066cc; margin-bottom: 5px; }
-        h2 { border-bottom: 2px solid #0066cc; padding-bottom: 5px; color: #444; margin-top: 20px; }
-        .contact-info { margin-bottom: 20px; color: #666; }
-        .item { margin-bottom: 15px; }
-        .item h3 { margin: 0; color: #222; }
-        .date { font-style: italic; color: #777; font-size: 0.9em; }
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .cv-container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: #fff;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        /* Cột bên trái (Sidebar) */
+        .sidebar {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 30px;
+            text-align: center;
+        }
+        .avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-color);
+            margin-bottom: 20px;
+        }
+        .sidebar h2 {
+            font-size: 1.2rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 8px;
+            margin-top: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+        .sidebar a {
+            color: #ecf0f1;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            color: var(--accent-color);
+        }
+        /* Cột bên phải (Nội dung chính) */
+        .main-content {
+            padding: 40px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+        }
+        .title {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .item {
+            margin-bottom: 20px;
+        }
+        .item h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.1rem;
+            color: #2c3e50;
+        }
+        .item .company {
+            font-weight: 600;
+            color: var(--accent-color);
+            font-size: 0.95rem;
+        }
+        .item .date {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+        /* Responsive cho điện thoại */
+        @media (max-width: 768px) {
+            .cv-container {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Nguyễn Văn A</h1>
-        <div class="contact-info">
-            <p>Email: email@example.com | Điện thoại: 0123 456 789 | Địa điểm: Hà Nội, Việt Nam</p>
-        </div>
-        
-        <h2>Giới thiệu bản thân</h2>
-        <p>Tôi là một lập trình viên nhiệt huyết, có kinh nghiệm xây dựng các ứng dụng web tĩnh và tối ưu hóa hệ thống. Luôn sẵn sàng học hỏi công nghệ mới.</p>
-        
-        <h2>Kinh nghiệm làm việc</h2>
-        <div class="item">
-            <h3>Nhân viên phát triển Web (Frontend Developer)</h3>
-            <div class="date">2024 - Hiện tại</div>
-            <p>Phát triển giao diện người dùng, tối ưu hóa tốc độ tải trang và tích hợp các API dịch vụ.</p>
+
+    <div class="cv-container">
+        <!-- CỘT TRÁI: Thông tin cá nhân & Kỹ năng -->
+        <div class="sidebar">
+            <!-- Thay file avatar.jpg bằng tên ảnh của bạn trên GitHub -->
+            <img src="avatar.jpg" alt="Ảnh đại diện" class="avatar">
+            
+            <h2>Liên hệ</h2>
+            <ul>
+                <li>📞 0123 456 789</li>
+                <li>📧 email@example.com</li>
+                <li>📍 Hà Nội, Việt Nam</li>
+                <li>🔗 <a href="https://github.com" target="_blank">github.com/username</a></li>
+            </ul>
+
+            <h2>Kỹ năng</h2>
+            <ul>
+                <li>HTML5 / CSS3 / JavaScript</li>
+                <li>ReactJS / Node.js</li>
+                <li>Git & GitHub</li>
+                <li>Cloudflare Pages</li>
+                <li>Tối ưu hóa SEO & UI/UX</li>
+            </ul>
+
+            <h2>Ngôn ngữ</h2>
+            <ul>
+                <li>Tiếng Việt (Bản ngữ)</li>
+                <li>Tiếng Anh (Đọc hiểu tài liệu)</li>
+            </ul>
         </div>
 
-        <h2>Học vấn</h2>
-        <div class="item">
-            <h3>Cử nhân Công nghệ Thông tin</h3>
-            <div class="date">2020 - 2024</div>
-            <p>Đại học Công nghệ. Tốt loại Khá.</p>
-        </div>
+        <!-- CỘT PHẢI: Nội dung chi tiết -->
+        <div class="main-content">
+            <h1>Nguyễn Văn A</h1>
+            <div class="title">Frontend Developer</div>
 
-        <h2>Kỹ năng</h2>
-        <p>HTML5, CSS3, JavaScript, Git, GitHub, Cloudflare Pages.</p>
+            <div class="section-title">Giới thiệu bản thân</div>
+            <p>Lập trình viên Web năng động với hơn 2 năm kinh nghiệm xây dựng các ứng dụng giao diện người dùng tối ưu, mượt mà. Đam mê công nghệ mã nguồn mở và luôn chú trọng trải nghiệm người dùng.</p>
+
+            <div class="section-title">Kinh nghiệm làm việc</div>
+            
+            <div class="item">
+                <h3>Frontend Developer</h3>
+                <div class="company">Công ty Công nghệ XYZ</div>
+                <div class="date">01/2024 - Hiện tại</div>
+                <p>Phát triển và bảo trì hệ thống website thương mại điện tử, tối ưu hóa tốc độ tải trang giúp tăng 20% lượng khách hàng tương tác.</p>
+            </div>
+
+            <div class="item">
+                <h3>Junior Web Developer</h3>
+                <div class="company">Startup ABC</div>
+                <div class="date">06/2022 - 12/2023</div>
+                <p>Xây dựng các trang landing page, tích hợp API RESTful và làm việc trực tiếp với đội ngũ thiết kế UI/UX.</p>
+            </div>
+
+            <div class="section-title">Học vấn</div>
+            <div class="item">
+                <h3>Cử nhân Công nghệ Thông tin</h3>
+                <div class="company">Đại học Bách Khoa / Công nghệ</div>
+                <div class="date">2019 - 2023</div>
+                <p>Tốt loại Khá. Hoàn thành đồ án tốt nghiệp xuất sắc về ứng dụng Web tối ưu hiệu năng.</p>
+            </div>
+        </div>
     </div>
+
 </body>
 </html>
-
